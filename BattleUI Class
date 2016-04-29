@@ -2,7 +2,6 @@ public class BattleUI
 {
     Character player1;
     Character player2;
-    Character superShreker69;
     public BattleUI(int p1, int p2)
     {
         class ColorListener implements KeyListener
