@@ -1,68 +1,54 @@
-
-import java.awt.Event;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-public class BattleUI
+import javax.swing.*;
+public class Character extends JComponent
 {
-    Character player1;
-    Character player2;
-    public BattleUI(int p1, int p2)
+    int health;
+    int stamina;
+    int xloc;
+    int yloc;
+    boolean blocking;
+    int damage;
+    public Character()
     {
-        switch (p1)
-        {
-            case 0://player1 = new 
-            break;
-            case 1://player1 = new
-            break;
-            case 2://player1 = new
-            break;
-            case 3://player1 = new
-        }
-        switch (p2)
-        {
-            case 0://player2 = new
-            break;
-            case 1://player2 = new
-            break;
-            case 2://player2 = new
-            break;
-            case 3://player2 = new
-            break;
-        }  
-        class ColorListener implements KeyListener
-        {
-            public void keyPressed(KeyEvent e)
-            {
-                switch(e.getKeyCode())
-                {
-                    case KeyEvent.VK_E:  
-                         //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
-                         //else player1.groundMele();
-                         
-                    break;
-                    case KeyEvent.VK_O: 
-                         //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
-                         //else player1.groundMele();
-                    break;
-                    case KeyEvent.VK_S: player1.block(); break;
-                    case KeyEvent.VK_K: player2.block(); break;
-                    //case KeyEvent.VK_D: rC.decreaseB(); break;
-                    //case KeyEvent.VK_W: rC.increaseG(); break;
-                }
-            }
-
-            public void keyReleased(KeyEvent e)
-            {
-                switch(e.getKeyCode())
-                {
-                    case KeyEvent.VK_S: player1.stopBlocking(); break;
-                    case KeyEvent.VK_K: player2.stopBlocking(); break;
-                }
-            }
-
-            public void keyTyped(KeyEvent e){}   
-        }
+        health = 250;
+        stamina = 100;
+        blocking = false;
+        damage = 5;
     }
-
+    public void jump()
+    {
+    }
+    public void moveLeft()
+    {
+        xloc -= 25;
+    }
+    public void moveRight()
+    {
+        xloc += 25;
+    }
+    public void block()
+    {
+        blocking = true;
+    }
+    public void stopBlocking()
+    {
+        blocking = false;
+    }
+    public int getXLocation()
+    {
+        return xloc;
+    }
+    public int getYLocation()
+    {
+        return yloc;
+    }
+    public void groundMele()
+    {
+        
+    }
+    public void airMele()
+    {
+        
+    }
 }
+
