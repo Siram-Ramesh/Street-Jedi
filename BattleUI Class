@@ -1,46 +1,65 @@
+
+import java.awt.Event;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 public class BattleUI
 {
     Character player1;
     Character player2;
     public BattleUI(int p1, int p2)
     {
+        switch (p1)
+        {
+            case 0://player1 = new 
+            break;
+            case 1://player1 = new
+            break;
+            case 2://player1 = new
+            break;
+            case 3://player1 = new
+        }
+        switch (p2)
+        {
+            case 0://player2 = new
+            break;
+            case 1://player2 = new
+            break;
+            case 2://player2 = new
+            break;
+            case 3://player2 = new
+            break;
+        }  
         class ColorListener implements KeyListener
         {
             public void keyPressed(KeyEvent e)
             {
-                switch (p1)
-                {
-                    case 0://player1 = new 
-                    break;
-                    case 1://player1 = new
-                    break;
-                    case 2://player1 = new
-                    break;
-                    case 3://player1 = new
-                }
-                switch (p2)
-                {
-                    case 0://player2 = new
-                    break;
-                    case 1://player2 = new
-                    break;
-                    case 2://player2 = new
-                    break;
-                    case 3://player2 = new
-                    break;
-                }
                 switch(e.getKeyCode())
                 {
-                    case KeyEvent.VK_Q: rC.increaseR(); break;
-                    case KeyEvent.VK_A: rC.decreaseR(); break;
-                    case KeyEvent.VK_W: rC.increaseG(); break;
-                    case KeyEvent.VK_S: rC.decreaseG(); break;
-                    case KeyEvent.VK_E: rC.increaseB(); break;
-                    case KeyEvent.VK_D: rC.decreaseB(); break;
+                    case KeyEvent.VK_E:  
+                         //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
+                         //else player1.groundMele();
+                         
+                    break;
+                    case KeyEvent.VK_O: 
+                         //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
+                         //else player1.groundMele();
+                    break;
+                    case KeyEvent.VK_S: player1.block(); break;
+                    case KeyEvent.VK_K: player2.block(); break;
+                    //case KeyEvent.VK_D: rC.decreaseB(); break;
+                    //case KeyEvent.VK_W: rC.increaseG(); break;
                 }
             }
 
-            public void keyReleased(KeyEvent e){}
+            public void keyReleased(KeyEvent e)
+            {
+                switch(e.getKeyCode())
+                {
+                    case KeyEvent.VK_S: player1.stopBlocking(); break;
+                    case KeyEvent.VK_K: player2.stopBlocking(); break;
+                }
+            }
 
             public void keyTyped(KeyEvent e){}   
         }
