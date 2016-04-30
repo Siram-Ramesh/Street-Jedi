@@ -1,4 +1,31 @@
-public class MainMenu
-{
+import java.awt.Event;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
+public class MainMenu extends JComponent
+{
+    JFrame frame = new JFrame("Street-Jedi");
+    JPanel panel = new JPanel(new BorderLayout());
+    JButton play = new JButton("PLAY");
+    JButton controls = new JButton("CONTROLS");
+    JLabel title = new JLabel("STREET-JEDI");
+    public MainMenu()
+    {
+        frame.add(panel);
+        panel.add(title, BorderLayout.NORTH);
+        panel.add(play, BorderLayout.WEST);
+        panel.add(controls, BorderLayout.EAST);
+        
+        class PlayButtonListener implements ActionListener
+        {
+            CharacterSelectMenu csm = newCharacterSelectMenu();
+            //other stuff
+        }
+        class ControlsButtonListener implements ActionListener
+        {
+            //stuff and things and stuff
+        }
+    }
+    
 }
