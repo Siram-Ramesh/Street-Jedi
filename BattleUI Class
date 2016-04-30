@@ -30,7 +30,7 @@ public class BattleUI
             case 3://player2 = new
             break;
         }  
-        class ColorListener implements KeyListener
+        class ControlsListener implements KeyListener
         {
             public void keyPressed(KeyEvent e)
             {
