@@ -4,31 +4,31 @@ public class BattleUI
     Character player2;
     public BattleUI(int p1, int p2)
     {
+        switch (p1)
+        {
+            case 0://player1 = new 
+            break;
+            case 1://player1 = new
+            break;
+            case 2://player1 = new
+            break;
+            case 3://player1 = new
+        }
+        switch (p2)
+        {
+            case 0://player2 = new
+            break;
+            case 1://player2 = new
+            break;
+            case 2://player2 = new
+            break;
+            case 3://player2 = new
+            break;
+        }  
         class ColorListener implements KeyListener
         {
             public void keyPressed(KeyEvent e)
             {
-                switch (p1)
-                {
-                    case 0://player1 = new 
-                    break;
-                    case 1://player1 = new
-                    break;
-                    case 2://player1 = new
-                    break;
-                    case 3://player1 = new
-                }
-                switch (p2)
-                {
-                    case 0://player2 = new
-                    break;
-                    case 1://player2 = new
-                    break;
-                    case 2://player2 = new
-                    break;
-                    case 3://player2 = new
-                    break;
-                }
                 switch(e.getKeyCode())
                 {
                     case KeyEvent.VK_Q: rC.increaseR(); break;
