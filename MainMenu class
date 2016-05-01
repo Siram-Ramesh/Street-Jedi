@@ -5,12 +5,11 @@ import java.awt.event.*;
 
 public class MainMenu extends JComponent
 {
-    JFrame frame = new JFrame("Street-Jedi");
     JPanel panel = new JPanel(new BorderLayout());
     JButton play = new JButton("PLAY");
     JButton controls = new JButton("CONTROLS");
     JLabel title = new JLabel("STREET-JEDI");
-    public MainMenu()
+    public MainMenu(JFrame frame)
     {
         frame.add(panel);
         panel.add(title, BorderLayout.NORTH);
@@ -19,7 +18,7 @@ public class MainMenu extends JComponent
         
         class PlayButtonListener implements ActionListener
         {
-            CharacterSelectMenu csm = newCharacterSelectMenu();
+            CharacterSelectMenu csm = newCharacterSelectMenu(frame);
             //other stuff
         }
         class ControlsButtonListener implements ActionListener
