@@ -28,6 +28,9 @@ public class CharacterSelectMenu
     JCheckBox p1Ready = new JCheckBox("READY?");
     JCheckBox p2Ready = new JCheckBox("READY?");
     
+    int p1Character;
+    int p2Character;
+    
     public CharacterSelectMenu(JFrame frame)
     {
         frame.add(mainPanel);
@@ -53,6 +56,14 @@ public class CharacterSelectMenu
         p2CharacterPanel2.add(p2Palpatine);
         p1SelectPanel.add(p1Ready);
         p2SelectPanel.add(p2Ready);
+        
+        class Luke1Listener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                p1Character = 1;
+            }
+        }
     }
     
     
