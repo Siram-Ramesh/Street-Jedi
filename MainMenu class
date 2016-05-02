@@ -5,16 +5,18 @@ import java.awt.event.*;
 
 public class MainMenu extends JComponent
 {
-    JPanel panel = new JPanel(new BorderLayout());
+    JPanel panel = new JPanel(new GridLayout(2,1));
+    JPanel buttonPanel = new JPanel(new GridLayout(1,2));
     JButton play = new JButton("PLAY");
     JButton controls = new JButton("CONTROLS");
     JLabel title = new JLabel("STREET-JEDI");
     public MainMenu(JFrame frame)
     {
         frame.add(panel);
-        panel.add(title, BorderLayout.NORTH);
-        panel.add(play, BorderLayout.WEST);
-        panel.add(controls, BorderLayout.EAST);
+        panel.add(title);
+        panel.add(buttonPanel);
+        buttonPanel.add(play);
+        buttonPanel.add(controls);
         
         class PlayButtonListener implements ActionListener
         {
