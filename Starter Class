@@ -1,8 +1,10 @@
-import java.awt.*;
-import javax.swing.*;
-
+import javax.swing.JFrame;
 public class Starter
 {
-    JFrame frame = new JFrame("Street-Jedi");
-    MainMenu startingMenu = new MainMenu(frame);
+    public static void main(String[] args)
+    {
+        JFrame frame = new JFrame("Street-Jedi");
+        frame.setSize(800, 600);
+        MainMenu menu = new MainMenu(frame);
+    }
 }
