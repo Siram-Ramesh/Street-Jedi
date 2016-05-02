@@ -121,14 +121,14 @@ public class CharacterSelectMenu
                 frame.repaint();
             }
         }
-        p1Luke.addActionListener(Luke1Listener);
-        p1Vader.addActionListener(Vader1Listener);
-        p1Yoda.addActionListener(Yoda1Listener);
-        p1Palpatine.addActionListener(Palpatine1Listener);
-        p2Luke.addActionListener(Luke2Listener);
-        p2Vader.addActionListener(Vader2Listener);
-        p2Yoda.addActionListener(Yoda2Listener);
-        p2Palpatine.addActionListener(Palpatine2Listener);
+        p1Luke.addActionListener(new Luke1Listener());
+        p1Vader.addActionListener(new Vader1Listener());
+        p1Yoda.addActionListener(new Yoda1Listener());
+        p1Palpatine.addActionListener(new Palpatine1Listener());
+        p2Luke.addActionListener(new Luke2Listener());
+        p2Vader.addActionListener(new Vader2Listener());
+        p2Yoda.addActionListener(new Yoda2Listener());
+        p2Palpatine.addActionListener(new Palpatine2Listener());
         
         class ReadyListener implements ActionListener
         {
