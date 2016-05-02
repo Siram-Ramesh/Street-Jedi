@@ -29,6 +29,8 @@ public class MainMenu extends JComponent
         ControlsButtonListener cListener = new ControlsButtonListener();
         play.addActionListener(pListener);
         controls.addActionListener(cListener);
+        
+        frame.setVisible(true);
     }
     
 }
