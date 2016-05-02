@@ -18,12 +18,18 @@ public class MainMenu extends JComponent
         
         class PlayButtonListener implements ActionListener
         {
-            frame.removeAll();
-            CharacterSelectMenu csm = newCharacterSelectMenu(frame);
+            public void actionPerformed(ActionEvent e)
+            {
+                frame.removeAll();
+                CharacterSelectMenu csm = new CharacterSelectMenu(frame);
+            }
         }
         class ControlsButtonListener implements ActionListener
         {
-            //stuff and things and stuff
+            public void actionPerformed(ActionEvent e)
+            {
+                //stuff and things and stuff
+            }
         }
         PlayButtonListener pListener = new PlayButtonListener();
         ControlsButtonListener cListener = new ControlsButtonListener();
