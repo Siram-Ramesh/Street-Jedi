@@ -62,6 +62,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p1Character = 0;
+                frame.repaint();
             }
         }
         class Vader1Listener implements ActionListener
@@ -69,6 +70,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p1Character = 1;
+                frame.repaint();
             }
         }
         class Yoda1Listener implements ActionListener
@@ -76,6 +78,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p1Character = 2;
+                frame.repaint();
             }
         }
         class Palpatine1Listener implements ActionListener
@@ -83,6 +86,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p1Character = 3;
+                frame.repaint();
             }
         }
         class Luke2Listener implements ActionListener
@@ -90,6 +94,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p2Character = 0;
+                frame.repaint();
             }
         }
         class Vader2Listener implements ActionListener
@@ -97,6 +102,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p2Character = 1;
+                frame.repaint();
             }
         }
         class Yoda2Listener implements ActionListener
@@ -104,6 +110,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p2Character = 2;
+                frame.repaint();
             }
         }
         class Palpatine2Listener implements ActionListener
@@ -111,6 +118,7 @@ public class CharacterSelectMenu
             public void actionPerformed(ActionEvent e)
             {
                 p2Character = 3;
+                frame.repaint();
             }
         }
         p1Luke.addActionListener(Luke1Listener);
@@ -121,6 +129,19 @@ public class CharacterSelectMenu
         p2Vader.addActionListener(Vader2Listener);
         p2Yoda.addActionListener(Yoda2Listener);
         p2Palpatine.addActionListener(Palpatine2Listener);
+        
+        class ReadyListener implements ActionListener
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                if(p1Ready.isSelected() && p2Ready.isSelected())
+                {
+                    frame.removeAll();
+                    BattleUI battle = new BattleUI(frame, p1Character, p2Character);
+                }
+            }
+        }
+    
     }
     
     
