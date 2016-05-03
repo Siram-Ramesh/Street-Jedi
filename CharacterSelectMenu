@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.border.*;
 
 public class CharacterSelectMenu
 {
@@ -8,10 +9,8 @@ public class CharacterSelectMenu
     JPanel mainPanel = new JPanel(new GridLayout(1,2));
     JPanel p1Panel = new JPanel(new GridLayout(2,1));
     JPanel p2Panel = new JPanel(new GridLayout(2,1));
-    JPanel p1PicturePanel = new JPanel(new BorderLayout());
-    JLabel p1Label = new JLabel("Player 1");
-    JPanel p2PicturePanel = new JPanel(new BorderLayout());
-    JLabel p2Label = new JLabel("Player 2");
+    JPanel p1PicturePanel = new JPanel();
+    JPanel p2PicturePanel = new JPanel();
     JPanel p1SelectPanel = new JPanel(new GridLayout(3,1));
     JPanel p2SelectPanel = new JPanel(new GridLayout(3,1));
     JButton p1Luke = new JButton("Luke");
@@ -34,15 +33,15 @@ public class CharacterSelectMenu
     
     public CharacterSelectMenu()
     {
-        frame.add(mainPanel);
         frame.setSize(600,800);
+        frame.add(mainPanel);
         mainPanel.add(p1Panel);
         mainPanel.add(p2Panel);
         p1Panel.add(p1PicturePanel);
-        p1PicturePanel.add(p1Label, BorderLayout.NORTH);
         p2Panel.add(p2PicturePanel);
-        p2PicturePanel.add(p2Label, BorderLayout.NORTH);
+        p1Panel.setBorder(new TitledBorder(new EtchedBorder(),"Player 1"));
         p1Panel.add(p1SelectPanel);
+        p2Panel.setBorder(new TitledBorder(new EtchedBorder(),"Player 2"));
         p2Panel.add(p2SelectPanel);
         p1SelectPanel.add(p1CharacterPanel1);
         p1CharacterPanel1.add(p1Luke);
@@ -58,6 +57,8 @@ public class CharacterSelectMenu
         p2CharacterPanel2.add(p2Palpatine);
         p1SelectPanel.add(p1Ready);
         p2SelectPanel.add(p2Ready);
+        
+        frame.repaint();
         frame.setVisible(true);
         
         class Luke1Listener implements ActionListener
@@ -139,7 +140,7 @@ public class CharacterSelectMenu
             {
                 if(p1Ready.isSelected() && p2Ready.isSelected())
                 {
-                    frame.setVisible(false);
+                    frame.removeAll();
                     BattleUI battle = new BattleUI(frame, p1Character, p2Character);
                 }
             }
