@@ -24,6 +24,7 @@ public class MainMenu extends JComponent
         {
             public void actionPerformed(ActionEvent e)
             {
+                frame.setVisible(false);
                 CharacterSelectMenu csm = new CharacterSelectMenu();
             }
         }
