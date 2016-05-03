@@ -10,8 +10,10 @@ public class MainMenu extends JComponent
     JButton play = new JButton("PLAY");
     JButton controls = new JButton("CONTROLS");
     JLabel title = new JLabel("STREET-JEDI");
-    public MainMenu(JFrame frame)
+    JFrame frame = new JFrame("Street-Jedi-Dangerzone");
+    public MainMenu()
     {
+        frame.setSize(300,200);
         frame.add(panel);
         panel.add(title);
         panel.add(buttonPanel);
@@ -22,8 +24,7 @@ public class MainMenu extends JComponent
         {
             public void actionPerformed(ActionEvent e)
             {
-                frame.removeAll();
-                CharacterSelectMenu csm = new CharacterSelectMenu(frame);
+                CharacterSelectMenu csm = new CharacterSelectMenu();
             }
         }
         class ControlsButtonListener implements ActionListener
