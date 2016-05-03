@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 public class CharacterSelectMenu
 {
+    JFrame frame = new JFrame("Street-Jedi");
     JPanel mainPanel = new JPanel(new GridLayout(1,2));
     JPanel p1Panel = new JPanel(new GridLayout(2,1));
     JPanel p2Panel = new JPanel(new GridLayout(2,1));
@@ -31,9 +32,10 @@ public class CharacterSelectMenu
     int p1Character;
     int p2Character;
     
-    public CharacterSelectMenu(JFrame frame)
+    public CharacterSelectMenu()
     {
         frame.add(mainPanel);
+        frame.setSize(600,800);
         mainPanel.add(p1Panel);
         mainPanel.add(p2Panel);
         p1Panel.add(p1PicturePanel);
@@ -56,6 +58,7 @@ public class CharacterSelectMenu
         p2CharacterPanel2.add(p2Palpatine);
         p1SelectPanel.add(p1Ready);
         p2SelectPanel.add(p2Ready);
+        frame.setVisible(true);
         
         class Luke1Listener implements ActionListener
         {
@@ -136,7 +139,7 @@ public class CharacterSelectMenu
             {
                 if(p1Ready.isSelected() && p2Ready.isSelected())
                 {
-                    frame.removeAll();
+                    frame.setVisible(false);
                     BattleUI battle = new BattleUI(frame, p1Character, p2Character);
                 }
             }
