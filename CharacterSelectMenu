@@ -44,24 +44,24 @@ public class CharacterSelectMenu
         p2Panel.setBorder(new TitledBorder(new EtchedBorder(),"Player 2"));
         p2Panel.add(p2SelectPanel);
         p1SelectPanel.add(p1CharacterPanel1);
-        p1CharacterPanel1.add(p1Luke);
+        p1CharacterPanel1.add(p1ObiWan);
         p1CharacterPanel1.add(p1Vader);
         p1SelectPanel.add(p1CharacterPanel2);
         p1CharacterPanel2.add(p1Yoda);
-        p1CharacterPanel2.add(p1Palpatine);
+        p1CharacterPanel2.add(p1Dooku);
         p2SelectPanel.add(p2CharacterPanel1);
-        p2CharacterPanel1.add(p2Luke);
+        p2CharacterPanel1.add(p2ObiWan);
         p2CharacterPanel1.add(p2Vader);
         p2SelectPanel.add(p2CharacterPanel2);
         p2CharacterPanel2.add(p2Yoda);
-        p2CharacterPanel2.add(p2Palpatine);
+        p2CharacterPanel2.add(p2Dooku);
         p1SelectPanel.add(p1Ready);
         p2SelectPanel.add(p2Ready);
         
         frame.repaint();
         frame.setVisible(true);
         
-        class Luke1Listener implements ActionListener
+        class ObiWan1Listener implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
@@ -85,7 +85,7 @@ public class CharacterSelectMenu
                 frame.repaint();
             }
         }
-        class Palpatine1Listener implements ActionListener
+        class Dooku1Listener implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
@@ -93,7 +93,7 @@ public class CharacterSelectMenu
                 frame.repaint();
             }
         }
-        class Luke2Listener implements ActionListener
+        class ObiWan2Listener implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
@@ -117,7 +117,7 @@ public class CharacterSelectMenu
                 frame.repaint();
             }
         }
-        class Palpatine2Listener implements ActionListener
+        class Dooku2Listener implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
             {
@@ -125,14 +125,14 @@ public class CharacterSelectMenu
                 frame.repaint();
             }
         }
-        p1Luke.addActionListener(new Luke1Listener());
+        p1ObiWan.addActionListener(new ObiWan1Listener());
         p1Vader.addActionListener(new Vader1Listener());
         p1Yoda.addActionListener(new Yoda1Listener());
-        p1Palpatine.addActionListener(new Palpatine1Listener());
-        p2Luke.addActionListener(new Luke2Listener());
+        p1Dooku.addActionListener(new Dooku1Listener());
+        p2ObiWan.addActionListener(new ObiWan2Listener());
         p2Vader.addActionListener(new Vader2Listener());
         p2Yoda.addActionListener(new Yoda2Listener());
-        p2Palpatine.addActionListener(new Palpatine2Listener());
+        p2Dooku.addActionListener(new Dooku2Listener());
         
         class ReadyListener implements ActionListener
         {
