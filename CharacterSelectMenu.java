@@ -140,11 +140,14 @@ public class CharacterSelectMenu
             {
                 if(p1Ready.isSelected() && p2Ready.isSelected())
                 {
-                    frame.removeAll();
-                    BattleUI battle = new BattleUI(frame, p1Character, p2Character);
+                    frame.setVisible(false);
+                    BattleUI battle = new BattleUI(p1Character, p2Character);
                 }
             }
         }
+        
+        p1Ready.addActionListener(new ReadyListener());
+        p2Ready.addActionListener(new ReadyListener());
     
     }
     
