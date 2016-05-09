@@ -11,6 +11,8 @@ To do list:
 
 -Create timers for moving and animation
 
+-Finish remaining art assets
+
 -QOL improvements/icing on the cake
 
 -Bugfixing, bugfixing everywhere
