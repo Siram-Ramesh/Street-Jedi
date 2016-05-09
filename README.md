@@ -1,5 +1,5 @@
 # Street-Fighter
-By Sriram Ramesh, Krisztian Nagy, and Jonathan Iyachi
+By Sriram Ramesh, Krisztian Nagy, and Jonathan Ayache
 
 
 
