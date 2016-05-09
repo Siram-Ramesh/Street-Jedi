@@ -13,7 +13,6 @@ To do list:
 
 -Finish remaining art assets
 
--QOL improvements/icing on the cake
-
 -Bugfixing, bugfixing everywhere
 
+-QOL improvements/icing on the cake
