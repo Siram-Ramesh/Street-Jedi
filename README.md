@@ -5,11 +5,13 @@ By Sriram Ramesh, Krisztian Nagy, and Jonathan Ayache
 
 To do list:
 
--Make shit appear
+-Make characters appear (properly, if possible)
 
--Make shit work
+-Make health bars/make them appear/ make them move
 
--Make shit in general
+-Create timers for moving and animation
 
--Turn it in before the due date
+-QOL improvements/icing on the cake
+
+-Bugfixing, bugfixing everywhere
 
