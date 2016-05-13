@@ -2,6 +2,8 @@ import java.awt.Event;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import sun.audio.*;
 
 public class MainMenu extends JComponent
 {
@@ -13,13 +15,19 @@ public class MainMenu extends JComponent
     JFrame frame = new JFrame("Street-Jedi-Dangerzone");
     public MainMenu()
     {
+        try
+        {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        }
+        catch (Exception ex){}
         frame.setSize(300,200);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(panel);
         panel.add(title);
         panel.add(buttonPanel);
         buttonPanel.add(play);
         buttonPanel.add(controls);
-        
+        playSound();
         class PlayButtonListener implements ActionListener
         {
             public void actionPerformed(ActionEvent e)
@@ -32,7 +40,11 @@ public class MainMenu extends JComponent
         {
             public void actionPerformed(ActionEvent e)
             {
-                //stuff and things and stuff
+                JFrame cframe = new JFrame("Controls");
+                cframe.setSize(500,380);
+                ControlsMenu cm = new ControlsMenu();
+                cframe.add(cm);
+                cframe.setVisible(true);
             }
         }
         PlayButtonListener pListener = new PlayButtonListener();
@@ -42,5 +54,17 @@ public class MainMenu extends JComponent
         
         frame.setVisible(true);
     }
-    
+    private void playSound() 
+    {
+        try
+        {
+            InputStream inputStream = getClass().getResourceAsStream("MenuTheme.wav");
+            AudioStream audioStream = new AudioStream(inputStream);
+            AudioPlayer.player.start(audioStream);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Audio File Not Found.");
+        }
+    }
 }
