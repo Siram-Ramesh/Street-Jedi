@@ -1,10 +1,9 @@
 
-
 import java.awt.Event;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class BattleUI
+public class BattleUI implements ActionListener
 {
     Character player1;
     Character player2;
@@ -13,31 +12,35 @@ public class BattleUI
     {
         frame = new JFrame("Street-Jedi");
         frame.setSize(800,600);
-        player1 = new Luke(frame);
-        player2 = new Luke(frame);
+        player1 = new Luke();
+        player2 = new Luke();
         frame.add(player1);
         frame.add(player2);
-        frame.setVisible(true);
         /*
         switch (p1)
         {
-            case 0://player1 = new 
+            case 0: player1 = new 
             break;
-            case 1://player1 = new
+            case 1: player1 = new
             break;
-            case 2://player1 = new
+            case 2: player1 = new
             break;
-            case 3://player1 = new
+            case 3: player1 = new
+            break;
+            case 4: player1 = new
+            break;
         }
         switch (p2)
         {
-            case 0://player2 = new
+            case 0: player2 = new
             break;
-            case 1://player2 = new
+            case 1: player2 = new
             break;
-            case 2://player2 = new
+            case 2: player2 = new
             break;
-            case 3://player2 = new
+            case 3: player2 = new
+            break;
+            case 4: player2 = new
             break;
         }  
         */
@@ -83,5 +86,13 @@ public class BattleUI
             public void keyTyped(KeyEvent e){}   
         }
         frame.addKeyListener(new ControlsListener());
+        Timer t = new Timer(5,this);
+        t.start();
+        frame.setVisible(true);
+    }
+    public void actionPerformed(ActionEvent e)
+    {
+        player1.move();
+        player2.move();
     }
 }
