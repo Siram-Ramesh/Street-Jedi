@@ -38,7 +38,7 @@ public class Character extends JComponent
     {
         if(!(yloc<500)) 
         {
-            ymov = i;
+            ymov -= i;
             repaint();
         }
     }
@@ -46,7 +46,7 @@ public class Character extends JComponent
     {
         if(yloc<500) 
         {
-            ymov -= i;
+            ymov += i;
         }
     }
     public void move()
