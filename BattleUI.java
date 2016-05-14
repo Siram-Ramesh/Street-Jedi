@@ -8,14 +8,19 @@ public class BattleUI implements ActionListener
     Character player1;
     Character player2;
     JFrame frame;
+    HealthBar stats;
     public BattleUI(int p1, int p2)
     {
         frame = new JFrame("Street-Jedi");
         frame.setSize(800,600);
         player1 = new Luke();
         player2 = new Luke();
+        stats = new HealthBar(player1, player2);
         frame.add(player1);
+        frame.setVisible(true);
         frame.add(player2);
+        frame.setVisible(true);
+        frame.add(stats);
         /*
         switch (p1)
         {
@@ -53,11 +58,13 @@ public class BattleUI implements ActionListener
                     case KeyEvent.VK_E:  
                          //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
                          //else player1.groundMele();
+                         player1.groundMele(player2);
                          
                     break;
                     case KeyEvent.VK_O: 
-                         //if(player1.getXLocation()+player1.getHeight()<500)player1.airMele();
-                         //else player1.groundMele();
+                         //if(player2.getXLocation()+player2.getHeight()<500)player2.airMele();
+                         //else player2.groundMele();
+                         player2.groundMele(player1);
                     break;
                     case KeyEvent.VK_S: player1.block(); break;
                     case KeyEvent.VK_K: player2.block(); break;
@@ -93,6 +100,11 @@ public class BattleUI implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         player1.move();
+        player1.setLocation(player1.getXLocation(), player1.getYLocation());
+        player1.repaint();
         player2.move();
+        player2.setLocation(player2.getXLocation(), player2.getYLocation());
+        player2.repaint();
+        stats.repaint();
     }
 }
