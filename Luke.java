@@ -11,7 +11,8 @@ public class Luke extends Character
     ImageIcon blocking;
     ImageIcon jumping;
     ImageIcon attacking;
-    ImageIcon luke;
+    JLabel luke;
+    
     public Luke()
     {
         super.height = 50;
@@ -19,17 +20,19 @@ public class Luke extends Character
         walking = new ImageIcon("lukeWalk.gif");
         attacking = new ImageIcon("lukeSlash1fast.gif");
         standing = new ImageIcon("lukeJump.gif");
+        blocking = new ImageIcon("LukeBlock.gif");
+        luke = new JLabel(standing);
     }
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
         if(!(super.blocking))
         {
-            //g2.drawImage((Image)blocking, 0,0, null);
-            g2.setColor(Color.GREEN);
+            luke.setIcon(blocking);
+            //g2.setColor(Color.GREEN);
             Rectangle2D.Double placeHolder = new Rectangle2D.Double(300,300,50,50);
-            System.out.println("Rectbgle");
-            g2.draw(placeHolder);
+            System.out.println(this.getXLocation());
+            g2.fill(placeHolder);
         }
         else
         {
