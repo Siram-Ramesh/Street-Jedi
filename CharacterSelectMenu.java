@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.border.*;
-
+import sun.audio.*;
 public class CharacterSelectMenu
 {
     JFrame frame = new JFrame("Street-Jedi");
@@ -45,7 +45,7 @@ public class CharacterSelectMenu
     int p1Character;
     int p2Character;
     
-    public CharacterSelectMenu()
+    public CharacterSelectMenu(AudioStream audio)
     {
         frame.setSize(600,800);
         frame.add(mainPanel);
@@ -187,6 +187,7 @@ public class CharacterSelectMenu
             {
                 if(p1Ready.isSelected() && p2Ready.isSelected())
                 {
+                    AudioPlayer.player.stop(audio);
                     frame.setVisible(false);
                     BattleUI battle = new BattleUI(p1Character, p2Character);
                 }
