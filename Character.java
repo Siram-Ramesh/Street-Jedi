@@ -25,14 +25,22 @@ public class Character extends JComponent
         xmov = 0;
         ymov = 0;
     }
+    public int getStamina()
+    {
+        return stamina;
+    }
     public boolean isFacingLeft()
     {
         return facingLeft;
     }
-    public void hurt(Character enemy, int atk, boolean direction)
+    public void hurt(Character enemy, int atk)
     {
-        if(!enemy.isBlocking() && facingLeft != enemy.isFacingLeft())health -= atk;
+        if(!blocking || facingLeft == enemy.isFacingLeft())health -=atk;
         
+    }
+    public int getHealth()
+    {
+        return health;
     }
     public void jump(int i)
     {
@@ -53,7 +61,6 @@ public class Character extends JComponent
     {
         xloc += xmov;
         yloc += ymov;
-        repaint();
     }
     public void changeXSpeed(int i)
     {
@@ -108,7 +115,7 @@ public class Character extends JComponent
         Rectangle2D.Double enemy = new Rectangle2D.Double(p2.getXLocation(), p2.getYLocation(), p2.getHeight(), p2.getHeight());
         if(attack.intersects(enemy))
         {
-            p2.hurt(this, damage, facingLeft);
+            p2.hurt(this, damage);
         }
     }
     public void airMele(Character p2)
